@@ -7,41 +7,95 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg1: #020617; --bg2: #0f172a; --glass: rgba(255, 255, 255, 0.08); --accent: #22d3ee;
+            --bg1: #020617;
+            --bg2: #0f172a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --accent: #22d3ee;
+            --text-dim: #94a3b8;
         }
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body {
-            margin: 0; font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at 10% 20%, #22d3ee22, transparent 40%), linear-gradient(160deg, var(--bg1), var(--bg2));
-            color: white; line-height: 1.6;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 0% 0%, #22d3ee15, transparent 50%),
+                        linear-gradient(160deg, var(--bg1), var(--bg2));
+            color: white;
+            line-height: 1.6;
         }
-        header { text-align: center; padding: 100px 20px 70px; }
-        header img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent); box-shadow: 0 0 25px #22d3ee66; }
-        
-        section { max-width: 1200px; margin: auto; padding: 60px 20px; }
-        h2 { color: var(--accent); margin-bottom: 30px; border-left: 4px solid var(--accent); padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .card {
-            background: var(--glass); backdrop-filter: blur(18px); padding: 28px; border-radius: 20px; 
-            border: 1px solid rgba(255, 255, 255, 0.15); transition: .35s; height: 100%;
+
+        /* Nav & Header */
+        header { text-align: center; padding: 120px 20px 80px; }
+        header img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--accent); box-shadow: 0 0 30px rgba(34, 211, 238, 0.3); object-fit: cover; }
+        h1 { font-size: 3rem; margin: 20px 0 10px; letter-spacing: -1px; }
+        .subtitle { color: var(--accent); font-weight: 600; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* General Layout */
+        section { max-width: 1200px; margin: auto; padding: 80px 20px; }
+        h2 { font-size: 2rem; color: var(--accent); margin-bottom: 40px; display: flex; align-items: center; gap: 15px; }
+        h2::after { content: ""; height: 1px; flex-grow: 1; background: rgba(255,255,255,0.1); }
+
+        /* Project Grid Optimization */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
-        .card:hover { transform: translateY(-8px); border-color: var(--accent); }
-        
-        .skill-tag { 
-            display: inline-block; background: rgba(34, 211, 238, 0.1); border: 1px solid var(--accent);
-            color: var(--accent); padding: 5px 12px; margin: 4px; border-radius: 20px; font-size: 0.85rem;
+        .project-card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
         }
+        .project-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: rgba(255,255,255,0.08);
+        }
+        .project-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background: #1e293b;
+        }
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .project-card:hover .project-image-container img { transform: scale(1.1); }
         
+        .project-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: #f8fafc; }
+        .project-desc { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; min-height: 80px; }
+        
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+        .tech-pill { background: rgba(34, 211, 238, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(34, 211, 238, 0.2); }
+
         .btn {
-            display: inline-block; margin: 10px; padding: 12px 24px; border-radius: 12px;
-            background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white; text-decoration: none; font-weight: 600; transition: .3s;
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            text-align: center;
         }
-        .btn:hover { background: var(--accent); color: #020617; }
-        
-        .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin: 15px 0; border: 1px solid rgba(255,255,255,0.1); }
-        footer { text-align: center; padding: 40px; opacity: 0.6; border-top: 1px solid var(--glass); }
+        .btn-primary { background: var(--accent); color: #020617; }
+        .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: white; margin-top: auto; }
+        .btn-outline:hover { background: white; color: black; }
+
+        /* Skills Section */
+        .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .skill-box { background: var(--glass); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        .skill-box h3 { margin-top: 0; color: var(--accent); font-size: 1.1rem; }
+
+        footer { text-align: center; padding: 60px 20px; opacity: 0.5; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
@@ -49,97 +103,169 @@
 <header>
     <img src="images/profile.jpg" alt="Narendra Challa">
     <h1>Narendra Challa</h1>
-    <div style="color:var(--accent); font-weight:600; font-size:1.2rem;">DevOps & Cloud Infrastructure Engineer</div>
-    <p style="opacity:0.8;">Specializing in AWS, Kubernetes, and Automation</p>
-    <a href="#projects" class="btn">Explore Projects</a>
-    <a href="#contact" class="btn">Get In Touch</a>
+    <div class="subtitle">DevOps & Cloud Engineer</div>
+    <div style="margin-top: 20px;">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="mailto:challanarendra303@gmail.com" class="btn btn-outline" style="margin-left:10px;">Contact Me</a>
+    </div>
 </header>
 
 <section id="objective">
     <h2>Career Objective</h2>
-    <div class="card">
-        <p style="font-size: 1.1rem; opacity: 0.9;">
-            Proactive and detail-oriented DevOps Engineer with a passion for automating complex workflows and scaling cloud infrastructure. 
-            My goal is to leverage my hands-on experience in <strong>CI/CD, Containerization, and Infrastructure as Code</strong> 
-            to streamline software delivery cycles and ensure 99.9% system reliability in high-growth production environments.
+    <div class="skill-box">
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-dim);">
+            Dynamic DevOps Engineer dedicated to automating and optimizing mission-critical deployments in cloud-native environments. 
+            Leveraging expertise in <strong>Kubernetes, AWS, and CI/CD</strong>, I aim to build resilient, self-healing infrastructures 
+            that empower development teams to ship code faster and more securely.
         </p>
     </div>
 </section>
 
 <section id="skills">
-    <h2>Technical Expertise</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>☁️ Cloud & Orchestration</h3>
-            <div class="skill-tag">AWS (EC2, S3, RDS, VPC)</div>
-            <div class="skill-tag">Kubernetes</div>
-            <div class="skill-tag">Docker Swarm</div>
-            <div class="skill-tag">Azure DevOps</div>
+    <h2>Technical Arsenal</h2>
+    <div class="skills-container">
+        <div class="skill-box">
+            <h3>Infrastructure & Cloud</h3>
+            <div class="tech-stack">
+                <span class="tech-pill">AWS</span> <span class="tech-pill">Azure</span>
+                <span class="tech-pill">Terraform</span> <span class="tech-pill">Linux</span>
+            </div>
         </div>
-        <div class="card">
-            <h3>⚙️ Automation & CI/CD</h3>
-            <div class="skill-tag">Jenkins</div>
-            <div class="skill-tag">GitHub Actions</div>
-            <div class="skill-tag">Terraform (IaaC)</div>
-            <div class="skill-tag">Ansible</div>
+        <div class="skill-box">
+            <h3>Containers & Orchestration</h3>
+            <div class="tech-stack">
+                <span class="tech-pill">Docker</span> <span class="tech-pill">Kubernetes</span>
+                <span class="tech-pill">Helm</span> <span class="tech-pill">EKS</span>
+            </div>
         </div>
-        <div class="card">
-            <h3>📊 Observability & OS</h3>
-            <div class="skill-tag">Prometheus</div>
-            <div class="skill-tag">Grafana</div>
-            <div class="skill-tag">Linux (Ubuntu/CentOS)</div>
-            <div class="skill-tag">Python & Bash Scripting</div>
+        <div class="skill-box">
+            <h3>CI/CD & Automation</h3>
+            <div class="tech-stack">
+                <span class="tech-pill">Jenkins</span> <span class="tech-pill">Git</span>
+                <span class="tech-pill">Ansible</span> <span class="tech-pill">GitHub Actions</span>
+            </div>
         </div>
-    </div>
-</section>
-
-<section id="why-hire">
-    <h2>Why Hire Me?</h2>
-    <div class="grid">
-        <div class="card">
-            <h4>🚀 Automation First Mindset</h4>
-            <p>I don't just fix problems; I build systems that prevent them. My focus is on reducing "toil" through robust scripting and automation.</p>
-        </div>
-        <div class="card">
-            <h4>🛠 End-to-End Ownership</h4>
-            <p>From provisioning the first VPC with Terraform to monitoring the final pod in K8s, I manage the entire lifecycle of an application.</p>
-        </div>
-        <div class="card">
-            <h4>💡 Scalability Focused</h4>
-            <p>I design architectures that grow with your user base, ensuring performance doesn't dip when traffic spikes.</p>
+        <div class="skill-box">
+            <h3>Observability</h3>
+            <div class="tech-stack">
+                <span class="tech-pill">Prometheus</span> <span class="tech-pill">Grafana</span>
+                <span class="tech-pill">ELK Stack</span>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="projects">
-    <h2>Projects (6)</h2>
-    <div class="grid">
-        <div class="card">
-            <h3 style="color:var(--accent);">1. Multi-Cloud DevOps Platform</h3>
-            <p>Full-stack Kubernetes deployment on AWS with real-time monitoring.</p>
-            <img src="images/k8s-project.jpg" class="project-img" alt="Project Screenshot">
-            <ul>
-                <li>Integrated Prometheus/Grafana</li>
-                <li>AWS Load Balancer setup</li>
-            </ul>
-            <a href="https://github.com/ChallaNarendra03" class="btn">View Project</a>
-        </div>
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
         
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="images/monitoring.png" alt="Multi-Cloud Monitoring">
+            </div>
+            <div class="project-content">
+                <div class="project-title">Production Multi-Cloud Platform</div>
+                <p class="project-desc">High-availability Kubernetes ecosystem on AWS with real-time observability and auto-scaling capabilities.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill">Kubernetes</span><span class="tech-pill">AWS</span><span class="tech-pill">Grafana</span>
+                </div>
+                <a href="https://github.com/ChallaNarendra03" class="btn btn-outline">View on GitHub</a>
+            </div>
         </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="images/pipeline.png" alt="CI/CD Pipeline">
+            </div>
+            <div class="project-content">
+                <div class="project-title">Automated CI/CD Pipeline</div>
+                <p class="project-desc">End-to-end automation using Jenkins and Azure DevOps to reduce manual deployment effort by 70%.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill">Jenkins</span><span class="tech-pill">Docker</span><span class="tech-pill">SonarQube</span>
+                </div>
+                <a href="https://github.com/ChallaNarendra03" class="btn btn-outline">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="images/terraform.png" alt="IaaC AWS">
+            </div>
+            <div class="project-content">
+                <div class="project-title">IaaC: AWS Infrastructure</div>
+                <p class="project-desc">Provisioning secure VPC environments, RDS, and EC2 clusters using modularized Terraform scripts.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill">Terraform</span><span class="tech-pill">Ansible</span><span class="tech-pill">AWS</span>
+                </div>
+                <a href="https://github.com/ChallaNarendra03" class="btn btn-outline">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="images/docker.png" alt="Docker Optimization">
+            </div>
+            <div class="project-content">
+                <div class="project-title">Docker Image Optimization</div>
+                <p class="project-desc">Implementing multi-stage builds to reduce image size by 60% and improve container security.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill">Docker</span><span class="tech-pill">Security</span><span class="tech-pill">Registry</span>
+                </div>
+                <a href="https://github.com/ChallaNarendra03" class="btn btn-outline">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="images/k8s-deploy.png" alt="K8s Deployment">
+            </div>
+            <div class="project-content">
+                <div class="project-title">Kubernetes App Deployment</div>
+                <p class="project-desc">Deploying containerized microservices with Ingress controllers and persistent storage volumes.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill">K8s</span><span class="tech-pill">Python</span><span class="tech-pill">Helm</span>
+                </div>
+                <a href="https://github.com/ChallaNarendra03" class="btn btn-outline">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="images/grafana-full.png" alt="Observability">
+            </div>
+            <div class="project-content">
+                <div class="project-title">Full-Stack Monitoring Stack</div>
+                <p class="project-desc">Centralized logging and alerting using Prometheus, Alertmanager, and customized Grafana dashboards.</p>
+                <div class="tech-stack">
+                    <span class="tech-pill">Prometheus</span><span class="tech-pill">Grafana</span><span class="tech-pill">Slack Integration</span>
+                </div>
+                <a href="https://github.com/ChallaNarendra03" class="btn btn-outline">View on GitHub</a>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card" style="text-align:center;">
-        <p>Email: challanarendra303@gmail.com</p>
-        <p>Location: Bengaluru, India</p>
-        <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-        <a href="https://linkedin.com/in/narendra-challa0" class="btn">LinkedIn</a>
+<section id="why-hire">
+    <h2>Why Work With Me?</h2>
+    <div class="skills-container">
+        <div class="skill-box">
+            <h3 style="color:white">Proven Expertise</h3>
+            <p>Hands-on experience with production Kubernetes clusters and high-scale cloud environments.</p>
+        </div>
+        <div class="skill-box">
+            <h3 style="color:white">Security First</h3>
+            <p>Integrating DevSecOps practices like container scanning and IaaC security checks into every pipeline.</p>
+        </div>
+        <div class="skill-box">
+            <h3 style="color:white">Rapid Adaptability</h3>
+            <p>Quick to master new tools in the ever-evolving DevOps landscape to bring immediate value to teams.</p>
+        </div>
     </div>
 </section>
 
 <footer>
-    © 2026 Narendra Challa | DevOps Portfolio
+    © 2026 Narendra Challa • DevOps Portfolio • Built for Reliability
 </footer>
 
 </body>
