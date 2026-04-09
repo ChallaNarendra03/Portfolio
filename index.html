@@ -1,211 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Narendra Challa | DevOps Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg1:#020617;
-  --bg2:#0f172a;
-  --glass:rgba(255,255,255,0.08);
-  --accent:#22d3ee;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background: radial-gradient(circle at 10% 20%, #22d3ee22, transparent 40%),
-              radial-gradient(circle at 80% 0%, #0ea5e922, transparent 40%),
-              linear-gradient(160deg,var(--bg1),var(--bg2));
-  color:white;
-}
-header{
-  text-align:center;
-  padding:100px 20px 70px;
-}
-header img{
-  width:140px;
-  border-radius:50%;
-  border:3px solid var(--accent);
-  box-shadow:0 0 25px #22d3ee66;
-}
-h1{font-size:2.7rem;margin:15px 0 5px}
-.subtitle{color:var(--accent);font-weight:600}
-.tagline{opacity:.85}
-.btn{
-  display:inline-block;
-  margin:10px;
-  padding:12px 24px;
-  border-radius:12px;
-  background:var(--glass);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.2);
-  color:white;
-  font-weight:600;
-  text-decoration:none;
-  transition:.3s;
-}
-.btn:hover{background:var(--accent);color:#020617}
-section{max-width:1150px;margin:auto;padding:60px 20px}
-h2{color:var(--accent);margin-bottom:25px}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-}
-.card{
-  background:var(--glass);
-  backdrop-filter:blur(18px);
-  padding:24px;
-  border-radius:20px;
-  transition:.35s;
-  border:1px solid rgba(255,255,255,0.15);
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-}
-.card:hover{
-  transform:translateY(-8px) scale(1.03);
-  box-shadow:0 25px 60px rgba(0,0,0,.7);
-}
-.project-title{font-weight:600;font-size:1.15rem;margin-bottom:8px}
-footer{text-align:center;padding:30px;opacity:.6}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narendra Challa | DevOps Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg1: #020617;
+            --bg2: #0f172a;
+            --glass: rgba(255, 255, 255, 0.08);
+            --accent: #22d3ee;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #22d3ee22, transparent 40%),
+                        radial-gradient(circle at 80% 0%, #0ea5e922, transparent 40%),
+                        linear-gradient(160deg, var(--bg1), var(--bg2));
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px 70px;
+        }
+
+        header img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 25px #22d3ee66;
+        }
+
+        h1 { font-size: 2.7rem; margin: 15px 0 5px; }
+        
+        .subtitle { color: var(--accent); font-weight: 600; font-size: 1.2rem; }
+        
+        .tagline { opacity: .85; margin-bottom: 25px; }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: #020617;
+            transform: translateY(-2px);
+        }
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(18px);
+            padding: 24px;
+            border-radius: 20px;
+            transition: .35s;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .7);
+            border-color: var(--accent);
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .project-img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 15px 0 5px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .img-caption {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        ul { padding-left: 20px; }
+        
+        li { margin-bottom: 8px; font-size: 0.95rem; }
+
+        footer { text-align: center; padding: 50px; opacity: .6; border-top: 1px solid var(--glass); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            section { padding: 40px 15px; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <img src="profile.jpg" alt="Profile">
-  <h1>Narendra Challa</h1>
-  <div class="subtitle">DevOps & Cloud Engineer</div>
-  <p class="tagline">AWS • Kubernetes • CI/CD • Terraform • Automation</p>
-  <a href="#projects" class="btn">View Projects</a>
-  <a href="#contact" class="btn">Hire Me</a>
+    <img src="profile.jpg" alt="Narendra Challa">
+    <h1>Narendra Challa</h1>
+    <div class="subtitle">DevOps & Cloud Engineer</div>
+    <p class="tagline">AWS • Kubernetes • CI/CD • Terraform • Automation</p>
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#contact" class="btn">Hire Me</a>
 </header>
 
 <section>
-  <h2>About Me</h2>
-  <div class="card">
-  <p>DevOps engineer with strong hands-on experience in cloud platforms, containerization, and automation. I focus on building scalable systems, improving deployment pipelines, and ensuring reliability in production environments.</p>
-  </div>
+    <h2>About Me</h2>
+    <div class="card">
+        <p>DevOps engineer with strong hands-on experience in cloud platforms, containerization, and automation. I focus on building scalable systems, improving deployment pipelines, and ensuring reliability in production environments. I specialize in bridging the gap between development and operations through modern IaaC and CI/CD practices.</p>
+    </div>
 </section>
 
 <section>
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card">☁️ AWS, Azure</div>
-    <div class="card">🐧 Linux</div>
-    <div class="card">📦 Docker, Kubernetes</div>
-    <div class="card">⚙️ Jenkins, CI/CD</div>
-    <div class="card">🛠 Terraform, Ansible</div>
-    <div class="card">💻 Python, Bash</div>
-    <div class="card">📊 Prometheus, Grafana</div>
-    <div class="card">🌐 Networking</div>
-  </div>
+    <h2>Skills</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+        <div class="card" style="text-align: center; padding: 15px;">☁️ AWS, Azure</div>
+        <div class="card" style="text-align: center; padding: 15px;">🐧 Linux</div>
+        <div class="card" style="text-align: center; padding: 15px;">📦 Docker, K8s</div>
+        <div class="card" style="text-align: center; padding: 15px;">⚙️ Jenkins, CI/CD</div>
+        <div class="card" style="text-align: center; padding: 15px;">🛠 Terraform, Ansible</div>
+        <div class="card" style="text-align: center; padding: 15px;">💻 Python, Bash</div>
+        <div class="card" style="text-align: center; padding: 15px;">📊 Prometheus, Grafana</div>
+        <div class="card" style="text-align: center; padding: 15px;">🌐 Networking</div>
+    </div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+        
+        <div class="card" style="grid-column: 1 / -1;">
+            <div class="project-title">🚀 Production-Grade Multi-Cloud DevOps Platform</div>
+            <p>Built a comprehensive DevOps ecosystem using Kubernetes on AWS with full observability. This project showcases the integration of deployment, real-time monitoring, and automated scaling for production environments.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <ul>
+                        <li>Deployed containerized applications using <strong>Docker & Kubernetes</strong></li>
+                        <li>Configured <strong>AWS LoadBalancer</strong> for secure external access</li>
+                        <li>Integrated <strong>Prometheus</strong> for automated metrics collection</li>
+                        <li>Built <strong>Grafana Dashboards</strong> for visual performance tracking</li>
+                        <li>Implemented namespace-based resource isolation and tracking</li>
+                        <li>Live application exposure via public production endpoints</li>
+                    </ul>
+                    <a href="https://github.com/ChallaNarendra03" class="btn">View Source Code</a>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="images/grafana-dashboard.png" class="project-img" alt="Grafana Dashboard">
+                    <p class="img-caption">📊 Real-time CPU and Memory utilization across K8s namespaces.</p>
+                    
+                    <img src="images/dashboard-list.png" class="project-img" alt="Dashboard List">
+                    <p class="img-caption">📋 Monitoring suite for API server, pods, and node metrics.</p>
+                </div>
+            </div>
+        </div>
 
-    <div class="card">
-      <div class="project-title">CI/CD Pipeline Automation</div>
-      <p>Designed automated CI/CD pipelines using Jenkins and Azure DevOps with Kubernetes deployment, reducing manual effort and improving release speed.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+        <div class="card">
+            <div class="project-title">CI/CD Pipeline Automation</div>
+            <p>Designed automated CI/CD pipelines using Jenkins and Azure DevOps with Kubernetes deployment, reducing manual effort by 70% and improving release frequency.</p>
+            <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+        </div>
+
+        <div class="card">
+            <div class="project-title">Terraform AWS Infrastructure</div>
+            <p>Provisioned modular AWS infrastructure (VPC, EC2, RDS) using Terraform and automated the post-provisioning configuration with Ansible playbooks.</p>
+            <a href="https://github.com/ChallaNarendra03/terraform-aws-infrastructure.git" class="btn">GitHub</a>
+        </div>
+
+        <div class="card">
+            <div class="project-title">Docker Optimization</div>
+            <p>Implemented multi-stage Docker builds to reduce image sizes by 60%, leading to faster pull times and improved container security by reducing attack surfaces.</p>
+            <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+        </div>
+
     </div>
-
-    <div class="card">
-      <div class="project-title">Kubernetes Application Deployment</div>
-      <p>Containerized and deployed Python applications on Kubernetes with monitoring using Prometheus and Grafana.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-    </div>
-
-    <div class="card">
-      <div class="project-title">Terraform AWS Infrastructure</div>
-      <p>Provisioned scalable AWS infrastructure using Terraform and automated configuration with Ansible.</p>
-      <a href="https://github.com/ChallaNarendra03/terraform-aws-infrastructure.git" class="btn">GitHub</a>
-    </div>
-
-    <div class="card">
-      <div class="project-title">Docker Optimization Project</div>
-      <p>Implemented multi-stage Docker builds to reduce image size and improve container performance.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-    </div>
-
-    <div class="card">
-      <div class="project-title">Monitoring Stack</div>
-      <p>Built monitoring dashboards and alerting systems using Prometheus and Grafana for real-time insights.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-    </div>
-
-  </div>
 </section>
 
 <section>
-  <h2>Internship Experience</h2>
-  <div class="card">
-    <p><strong>AI Intern – Teckybot, Visakhapatnam</strong></p>
-    <p>Worked on Artificial Intelligence-based applications, gaining practical exposure to real-world problem solving using AI techniques. Collaborated with team members to develop intelligent solutions and improved understanding of data-driven systems.</p>
-    <p>This experience strengthened my analytical thinking and helped me bridge AI concepts with DevOps practices like automation and scalable system design.</p>
-    <img src="internship.jpg" style="width:100%;border-radius:12px;margin-top:10px">
-  </div>
+    <h2>Architecture Case Studies</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="project-title">CI/CD Workflow Design</div>
+            <p>Complete integration architecture:</p>
+            <ul>
+                <li>GitHub Webhooks trigger Jenkins builds</li>
+                <li>SonarQube for static code analysis</li>
+                <li>Docker images stored in private registries</li>
+                <li>Rolling updates on Kubernetes clusters</li>
+            </ul>
+            <img src="architecture1.png" class="project-img" alt="CI/CD Architecture">
+        </div>
+
+        <div class="card">
+            <div class="project-title">IaaC Scaling Design</div>
+            <p>Standardized infrastructure deployment:</p>
+            <ul>
+                <li>Terraform State Management (S3/DynamoDB)</li>
+                <li>Multi-environment provisioning (Dev/Prod)</li>
+                <li>Auto-scaling groups & Load Balancing</li>
+                <li>Automated security patching via Ansible</li>
+            </ul>
+            <img src="architecture2.png" class="project-img" alt="Terraform Architecture">
+        </div>
+    </div>
 </section>
 
 <section>
-  <h2>Why Hire Me</h2>
-  <div class="grid">
-    <div class="card">✔ Proven hands-on experience with real DevOps projects (CI/CD, Kubernetes, Terraform)</div>
-    <div class="card">✔ Strong understanding of cloud infrastructure and automation</div>
-    <div class="card">✔ Ability to learn quickly and adapt to new technologies</div>
-    <div class="card">✔ Experience combining AI + DevOps mindset for smart automation</div>
-    <div class="card">✔ Focused on performance, scalability, and reliability</div>
-    <div class="card">✔ Ready to contribute from day one in real production environments</div>
-  </div>
-</section>
-
-<section>
-  <h2>Architecture & Case Study</h2>
-  <div class="grid">
-
+    <h2>Experience & Internship</h2>
     <div class="card">
-      <div class="project-title">CI/CD Pipeline Architecture</div>
-      <p>Designed a complete CI/CD workflow integrating Git, Jenkins, Docker, and Kubernetes.</p>
-      <ul>
-        <li>Code pushed to GitHub triggers Jenkins pipeline</li>
-        <li>Docker image built and pushed to registry</li>
-        <li>Automated deployment to Kubernetes cluster</li>
-        <li>Monitoring via Prometheus & Grafana</li>
-      </ul>
-      <img src="architecture1.png" style="width:100%;border-radius:10px;margin-top:10px;">
+        <p><strong>AI Intern – Teckybot, Visakhapatnam</strong></p>
+        <p>Gained practical exposure to AI-based applications and real-world problem-solving. This experience helped bridge the gap between AI development and DevOps practices, focusing on the automation of data-driven systems and model deployment (MLOps concepts).</p>
+        <img src="internship.jpg" class="project-img" style="max-height: 300px; object-fit: cover;" alt="Internship Experience">
     </div>
-
-    <div class="card">
-      <div class="project-title">Terraform Infrastructure Design</div>
-      <p>Implemented Infrastructure as Code for scalable AWS environments.</p>
-      <ul>
-        <li>Modular Terraform structure</li>
-        <li>Provisioned EC2, VPC, Load Balancer</li>
-        <li>Automated configuration using Ansible</li>
-        <li>Reusable and scalable design</li>
-      </ul>
-      <img src="architecture2.png" style="width:100%;border-radius:10px;margin-top:10px;">
-    </div>
-
-  </div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: challanarendra303@gmail.com</p>
-    <p>Phone: +91-9494875070</p>
-    <p><a href="https://github.com/ChallaNarendra03">GitHub</a></p>
-    <p><a href="https://linkedin.com/in/narendra-challa0">LinkedIn</a></p>
-  </div>
+    <h2>Contact & Socials</h2>
+    <div class="grid">
+        <div class="card" style="text-align: center;">
+            <p>📧 <strong>Email:</strong><br>challanarendra303@gmail.com</p>
+            <p>📱 <strong>Phone:</strong><br>+91-9494875070</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <p>🔗 <strong>Links:</strong></p>
+            <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+            <a href="https://linkedin.com/in/narendra-challa0" class="btn">LinkedIn</a>
+        </div>
+    </div>
 </section>
 
 <footer>
-  © 2026 Narendra Challa | DevOps Portfolio
+    © 2026 Narendra Challa | Built with Passion for DevOps & Automation
 </footer>
 
 </body>
