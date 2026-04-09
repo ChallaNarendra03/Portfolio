@@ -104,41 +104,120 @@ footer{text-align:center;padding:30px;opacity:.6}
   </div>
 </section>
 
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narendra Challa | DevOps Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#020617;
+  --bg2:#0f172a;
+  --glass:rgba(255,255,255,0.08);
+  --accent:#22d3ee;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at 10% 20%, #22d3ee22, transparent 40%),
+              radial-gradient(circle at 80% 0%, #0ea5e922, transparent 40%),
+              linear-gradient(160deg,var(--bg1),var(--bg2));
+  color:white;
+}
+header{
+  text-align:center;
+  padding:100px 20px 70px;
+}
+header img{
+  width:140px;
+  border-radius:50%;
+  border:3px solid var(--accent);
+  box-shadow:0 0 25px #22d3ee66;
+}
+h1{font-size:2.7rem;margin:15px 0 5px}
+.subtitle{color:var(--accent);font-weight:600}
+.tagline{opacity:.85}
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 24px;
+  border-radius:12px;
+  background:var(--glass);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  font-weight:600;
+  text-decoration:none;
+  transition:.3s;
+}
+.btn:hover{background:var(--accent);color:#020617}
+section{max-width:1150px;margin:auto;padding:60px 20px}
+h2{color:var(--accent);margin-bottom:25px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  padding:24px;
+  border-radius:20px;
+  transition:.35s;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 25px 60px rgba(0,0,0,.7);
+}
+.project-title{font-weight:600;font-size:1.15rem;margin-bottom:8px}
+footer{text-align:center;padding:30px;opacity:.6}
+img{max-width:100%}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="profile.jpg" alt="Profile">
+  <h1>Narendra Challa</h1>
+  <div class="subtitle">DevOps & Cloud Engineer</div>
+  <p class="tagline">AWS • Kubernetes • CI/CD • Terraform • Automation</p>
+  <a href="#projects" class="btn">View Projects</a>
+  <a href="#contact" class="btn">Hire Me</a>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <div class="card">
+  <p>DevOps engineer with strong hands-on experience in cloud platforms, containerization, and automation.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">☁️ AWS, Azure</div>
+    <div class="card">🐧 Linux</div>
+    <div class="card">📦 Docker, Kubernetes</div>
+    <div class="card">⚙️ Jenkins, CI/CD</div>
+    <div class="card">🛠 Terraform, Ansible</div>
+    <div class="card">💻 Python, Bash</div>
+    <div class="card">📊 Prometheus, Grafana</div>
+    <div class="card">🌐 Networking</div>
+  </div>
+</section>
+
 <section id="projects">
   <h2>Projects</h2>
   <div class="grid">
 
-    <div class="card">
-      <div class="project-title">CI/CD Pipeline Automation</div>
-      <p>Designed automated CI/CD pipelines using Jenkins and Azure DevOps with Kubernetes deployment, reducing manual effort and improving release speed.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-    </div>
-
-    <div class="card">
-      <div class="project-title">Kubernetes Application Deployment</div>
-      <p>Containerized and deployed Python applications on Kubernetes with monitoring using Prometheus and Grafana.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-    </div>
-
-    <div class="card">
-      <div class="project-title">Terraform AWS Infrastructure</div>
-      <p>Provisioned scalable AWS infrastructure using Terraform and automated configuration with Ansible.</p>
-      <a href="https://github.com/ChallaNarendra03/terraform-aws-infrastructure.git" class="btn">GitHub</a>
-    </div>
-
-    <div class="card">
-      <div class="project-title">Docker Optimization Project</div>
-      <p>Implemented multi-stage Docker builds to reduce image size and improve container performance.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-    </div>
-
-    <div class="card">
-      <div class="project-title">Monitoring Stack</div>
-      <p>Built monitoring dashboards and alerting systems using Prometheus and Grafana for real-time insights.</p>
-      <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-    </div>
-    <!-- ADD THIS INSIDE YOUR PROJECTS GRID -->
-
+```
+<!-- 🔥 MAIN DEVOPS PROJECT -->
 <div class="card">
   <div class="project-title">Production-Grade Multi-Cloud DevOps Platform</div>
 
@@ -148,48 +227,85 @@ footer{text-align:center;padding:30px;opacity:.6}
   </p>
 
   <ul>
-    <li>🚀 Deployed containerized applications using Docker & Kubernetes</li>
-    <li>☁️ Configured AWS LoadBalancer for external access</li>
-    <li>📊 Integrated Prometheus for metrics collection</li>
-    <li>📈 Built Grafana dashboards for real-time monitoring</li>
-    <li>⚙️ Monitored CPU, Memory, Pods, and cluster performance</li>
-    <li>🌐 Live application accessible via public endpoint</li>
-    <li>📦 Implemented namespace-based resource tracking</li>
+    <li>🚀 Docker & Kubernetes deployment</li>
+    <li>☁️ AWS LoadBalancer integration</li>
+    <li>📊 Prometheus monitoring</li>
+    <li>📈 Grafana dashboards</li>
+    <li>⚙️ CPU, Memory, Pods monitoring</li>
+    <li>🌐 Live application access</li>
   </ul>
 
-<a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-
-  <!-- Screenshots -->
+  <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
 
   <div style="margin-top:15px">
 
-```
-<img src="images/grafana-dashboard.png" style="width:100%;border-radius:10px;margin-top:10px;">
-<p style="font-size:14px;opacity:.8">
-  📊 Grafana Dashboard showing real-time CPU and Memory utilization across Kubernetes namespaces.
-</p>
+    <img src="images/grafana-dashboard.png">
+    <p style="font-size:14px;opacity:.8">Grafana Dashboard - CPU & Memory usage</p>
 
-<img src="images/dashboard-list.png" style="width:100%;border-radius:10px;margin-top:10px;">
-<p style="font-size:14px;opacity:.8">
-  📋 Multiple Kubernetes monitoring dashboards including API server, pods, networking, and node metrics.
-</p>
+    <img src="images/dashboard-list.png">
+    <p style="font-size:14px;opacity:.8">Kubernetes monitoring dashboards</p>
 
-<img src="images/metrics-graph.png" style="width:100%;border-radius:10px;margin-top:10px;">
-<p style="font-size:14px;opacity:.8">
-  📈 Cluster-wide performance metrics used for scaling and resource optimization.
-</p>
+    <img src="images/metrics-graph.png">
+    <p style="font-size:14px;opacity:.8">Cluster performance metrics</p>
 
-<img src="images/live-app.png" style="width:100%;border-radius:10px;margin-top:10px;">
-<p style="font-size:14px;opacity:.8">
-  🌐 Application successfully deployed and exposed via AWS LoadBalancer (live production access).
-</p>
-```
+    <img src="images/live-app.png">
+    <p style="font-size:14px;opacity:.8">Live application via LoadBalancer</p>
 
   </div>
 </div>
 
+<!-- OTHER PROJECTS -->
+<div class="card">
+  <div class="project-title">CI/CD Pipeline Automation</div>
+  <p>Designed CI/CD pipelines using Jenkins with Kubernetes deployment.</p>
+  <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+</div>
+
+<div class="card">
+  <div class="project-title">Kubernetes Application Deployment</div>
+  <p>Deployed containerized apps on Kubernetes with monitoring.</p>
+  <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+</div>
+
+<div class="card">
+  <div class="project-title">Terraform AWS Infrastructure</div>
+  <p>Provisioned AWS infrastructure using Terraform.</p>
+  <a href="https://github.com/ChallaNarendra03/terraform-aws-infrastructure.git" class="btn">GitHub</a>
+</div>
+
+<div class="card">
+  <div class="project-title">Docker Optimization Project</div>
+  <p>Optimized Docker images using multi-stage builds.</p>
+  <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+</div>
+
+<div class="card">
+  <div class="project-title">Monitoring Stack</div>
+  <p>Built monitoring dashboards using Prometheus and Grafana.</p>
+  <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+</div>
+```
+
   </div>
 </section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: challanarendra303@gmail.com</p>
+    <p>Phone: +91-9494875070</p>
+    <p><a href="https://github.com/ChallaNarendra03">GitHub</a></p>
+    <p><a href="https://linkedin.com/in/narendra-challa0">LinkedIn</a></p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Narendra Challa | DevOps Portfolio
+</footer>
+
+</body>
+</html>
+
 
 <section>
   <h2>Internship Experience</h2>
