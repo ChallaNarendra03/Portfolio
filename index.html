@@ -7,175 +7,139 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg1: #020617;
-            --bg2: #0f172a;
-            --glass: rgba(255, 255, 255, 0.08);
-            --accent: #22d3ee;
+            --bg1: #020617; --bg2: #0f172a; --glass: rgba(255, 255, 255, 0.08); --accent: #22d3ee;
         }
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
         body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at 10% 20%, #22d3ee22, transparent 40%),
-                        radial-gradient(circle at 80% 0%, #0ea5e922, transparent 40%),
-                        linear-gradient(160deg, var(--bg1), var(--bg2));
-            color: white;
-            line-height: 1.6;
+            margin: 0; font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #22d3ee22, transparent 40%), linear-gradient(160deg, var(--bg1), var(--bg2));
+            color: white; line-height: 1.6;
         }
         header { text-align: center; padding: 100px 20px 70px; }
-        header img {
-            width: 140px; height: 140px; object-fit: cover;
-            border-radius: 50%; border: 3px solid var(--accent);
-            box-shadow: 0 0 25px #22d3ee66;
-        }
-        h1 { font-size: 2.7rem; margin: 15px 0 5px; }
-        .subtitle { color: var(--accent); font-weight: 600; font-size: 1.2rem; }
-        .tagline { opacity: .85; margin-bottom: 25px; }
-        .btn {
-            display: inline-block; margin: 10px; padding: 12px 24px;
-            border-radius: 12px; background: var(--glass);
-            backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white; font-weight: 600; text-decoration: none; transition: .3s;
-        }
-        .btn:hover { background: var(--accent); color: #020617; transform: translateY(-3px); }
+        header img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent); box-shadow: 0 0 25px #22d3ee66; }
+        
         section { max-width: 1200px; margin: auto; padding: 60px 20px; }
-        h2 { color: var(--accent); margin-bottom: 30px; border-left: 4px solid var(--accent); padding-left: 15px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; }
+        h2 { color: var(--accent); margin-bottom: 30px; border-left: 4px solid var(--accent); padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
         .card {
-            background: var(--glass); backdrop-filter: blur(18px);
-            padding: 28px; border-radius: 20px; transition: .35s;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
-            display: flex; flex-direction: column;
+            background: var(--glass); backdrop-filter: blur(18px); padding: 28px; border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.15); transition: .35s; height: 100%;
         }
-        .card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
-        .project-title { font-weight: 700; font-size: 1.3rem; margin-bottom: 12px; color: var(--accent); }
-        .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin: 15px 0 8px; border: 1px solid rgba(255,255,255,0.1); }
-        .img-caption { font-size: 13px; opacity: 0.7; margin-bottom: 15px; font-style: italic; text-align: center; }
-        ul { padding-left: 20px; margin-bottom: 20px; flex-grow: 1; }
-        li { margin-bottom: 8px; font-size: 0.95rem; }
-        footer { text-align: center; padding: 50px; opacity: .6; border-top: 1px solid var(--glass); }
+        .card:hover { transform: translateY(-8px); border-color: var(--accent); }
+        
+        .skill-tag { 
+            display: inline-block; background: rgba(34, 211, 238, 0.1); border: 1px solid var(--accent);
+            color: var(--accent); padding: 5px 12px; margin: 4px; border-radius: 20px; font-size: 0.85rem;
+        }
+        
+        .btn {
+            display: inline-block; margin: 10px; padding: 12px 24px; border-radius: 12px;
+            background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white; text-decoration: none; font-weight: 600; transition: .3s;
+        }
+        .btn:hover { background: var(--accent); color: #020617; }
+        
+        .project-img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin: 15px 0; border: 1px solid rgba(255,255,255,0.1); }
+        footer { text-align: center; padding: 40px; opacity: 0.6; border-top: 1px solid var(--glass); }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="http://googleusercontent.com/image_collection/image_retrieval/4975685031677887545_0" alt="Narendra Challa Profile">
+    <img src="images/profile.jpg" alt="Narendra Challa">
     <h1>Narendra Challa</h1>
-    <div class="subtitle">DevOps & Cloud Engineer</div>
-    <p class="tagline">AWS • Kubernetes • CI/CD • Terraform • Automation</p>
-    <a href="#projects" class="btn">View Projects</a>
-    <a href="mailto:challanarendra303@gmail.com" class="btn">Hire Me</a>
+    <div style="color:var(--accent); font-weight:600; font-size:1.2rem;">DevOps & Cloud Infrastructure Engineer</div>
+    <p style="opacity:0.8;">Specializing in AWS, Kubernetes, and Automation</p>
+    <a href="#projects" class="btn">Explore Projects</a>
+    <a href="#contact" class="btn">Get In Touch</a>
 </header>
 
-<section id="projects">
-    <h2>Technical Projects</h2>
-    <div class="grid">
-
-        <div class="card">
-            <div class="project-title">🚀 Multi-Cloud DevOps Platform</div>
-            <p>High-availability Kubernetes ecosystem on AWS featuring production-grade observability and service exposure.</p>
-            <ul>
-                <li>Configured <strong>AWS LoadBalancer</strong> for external traffic</li>
-                <li>Full <strong>Prometheus & Grafana</strong> stack integration</li>
-                <li>Namespace-based resource isolation and limits</li>
-                <li>Live application deployment with rolling updates</li>
-            </ul>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/13732064288433447090_0" class="project-img" alt="Monitoring Dashboard">
-            <p class="img-caption">Real-time CPU/Memory Metrics</p>
-            <a href="https://github.com/ChallaNarendra03" class="btn" style="text-align:center">View on GitHub</a>
-        </div>
-
-        <div class="card">
-            <div class="project-title">⚙️ CI/CD Pipeline Automation</div>
-            <p>End-to-end automation for software delivery using Jenkins, Azure DevOps, and Kubernetes.</p>
-            <ul>
-                <li>Automated build-test-deploy cycles</li>
-                <li>Integrated Docker Hub for image management</li>
-                <li>Kubernetes deployment via Helm/Manifests</li>
-                <li>Reduced manual release effort by 70%</li>
-            </ul>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/11160210931236685477_0" class="project-img" alt="CI/CD Architecture">
-            <p class="img-caption">Pipeline Workflow Diagram</p>
-            <a href="https://github.com/ChallaNarendra03" class="btn" style="text-align:center">View on GitHub</a>
-        </div>
-
-        <div class="card">
-            <div class="project-title">📦 Kubernetes App Deployment</div>
-            <p>Containerized Python microservices orchestrated via K8s for scalability and fault tolerance.</p>
-            <ul>
-                <li>Multi-stage Docker builds for optimized images</li>
-                <li>Configured Horizontal Pod Autoscaling (HPA)</li>
-                <li>Ingress Controller for path-based routing</li>
-                <li>Integrated persistent storage volumes</li>
-            </ul>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/7717137069597791701_0" class="project-img" alt="Kubernetes Cluster">
-            <p class="img-caption">Cluster Service Overview</p>
-            <a href="https://github.com/ChallaNarendra03" class="btn" style="text-align:center">View on GitHub</a>
-        </div>
-
-        <div class="card">
-            <div class="project-title">🛠 Terraform AWS Infrastructure</div>
-            <p>Infrastructure as Code (IaaC) for provisioning secure, scalable cloud environments.</p>
-            <ul>
-                <li>Provisioned VPC, Subnets, and Security Groups</li>
-                <li>Modularized code for reusability across regions</li>
-                <li>State management via S3 and DynamoDB locking</li>
-                <li>Automated instance config with Ansible</li>
-            </ul>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/2951848479101453711_0" class="project-img" alt="Infrastructure Architecture">
-            <p class="img-caption">AWS Infrastructure Architecture</p>
-            <a href="https://github.com/ChallaNarendra03/terraform-aws-infrastructure.git" class="btn" style="text-align:center">View on GitHub</a>
-        </div>
-
-        <div class="card">
-            <div class="project-title">🐳 Docker Optimization Project</div>
-            <p>Advanced container management focusing on image security and performance tuning.</p>
-            <ul>
-                <li>Image size reduction using Alpine/Distroless</li>
-                <li>Layer caching optimization for faster builds</li>
-                <li>Container security scanning for vulnerabilities</li>
-                <li>Orchestration with Docker Compose for dev-envs</li>
-            </ul>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/7108324392280728636_0" class="project-img" alt="Docker Visualization">
-            <p class="img-caption">Container Optimization Diagram</p>
-            <a href="https://github.com/ChallaNarendra03" class="btn" style="text-align:center">View on GitHub</a>
-        </div>
-
-        <div class="card">
-            <div class="project-title">📊 Full-Stack Monitoring</div>
-            <p>Centralized logging and metrics collection for distributed systems and cloud resources.</p>
-            <ul>
-                <li>Prometheus data exporters for Linux & AWS</li>
-                <li>Custom Alertmanager rules for Slack/Email</li>
-                <li>Grafana dashboarding for business KPIs</li>
-                <li>Node Exporter for hardware health tracking</li>
-            </ul>
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/13732064288433447090_0" class="project-img" alt="Monitoring System">
-            <p class="img-caption">System Health Dashboard</p>
-            <a href="https://github.com/ChallaNarendra03" class="btn" style="text-align:center">View on GitHub</a>
-        </div>
-
+<section id="objective">
+    <h2>Career Objective</h2>
+    <div class="card">
+        <p style="font-size: 1.1rem; opacity: 0.9;">
+            Proactive and detail-oriented DevOps Engineer with a passion for automating complex workflows and scaling cloud infrastructure. 
+            My goal is to leverage my hands-on experience in <strong>CI/CD, Containerization, and Infrastructure as Code</strong> 
+            to streamline software delivery cycles and ensure 99.9% system reliability in high-growth production environments.
+        </p>
     </div>
 </section>
 
-<section id="contact">
-    <h2>Connect With Me</h2>
+<section id="skills">
+    <h2>Technical Expertise</h2>
     <div class="grid">
-        <div class="card" style="text-align:center">
-            <p>📧 <strong>Email</strong><br>challanarendra303@gmail.com</p>
-            <p>📱 <strong>Phone</strong><br>+91-9494875070</p>
+        <div class="card">
+            <h3>☁️ Cloud & Orchestration</h3>
+            <div class="skill-tag">AWS (EC2, S3, RDS, VPC)</div>
+            <div class="skill-tag">Kubernetes</div>
+            <div class="skill-tag">Docker Swarm</div>
+            <div class="skill-tag">Azure DevOps</div>
         </div>
-        <div class="card" style="text-align:center">
-            <p>🔗 <strong>Professional Links</strong></p>
-            <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
-            <a href="https://linkedin.com/in/narendra-challa0" class="btn">LinkedIn</a>
+        <div class="card">
+            <h3>⚙️ Automation & CI/CD</h3>
+            <div class="skill-tag">Jenkins</div>
+            <div class="skill-tag">GitHub Actions</div>
+            <div class="skill-tag">Terraform (IaaC)</div>
+            <div class="skill-tag">Ansible</div>
         </div>
+        <div class="card">
+            <h3>📊 Observability & OS</h3>
+            <div class="skill-tag">Prometheus</div>
+            <div class="skill-tag">Grafana</div>
+            <div class="skill-tag">Linux (Ubuntu/CentOS)</div>
+            <div class="skill-tag">Python & Bash Scripting</div>
+        </div>
+    </div>
+</section>
+
+<section id="why-hire">
+    <h2>Why Hire Me?</h2>
+    <div class="grid">
+        <div class="card">
+            <h4>🚀 Automation First Mindset</h4>
+            <p>I don't just fix problems; I build systems that prevent them. My focus is on reducing "toil" through robust scripting and automation.</p>
+        </div>
+        <div class="card">
+            <h4>🛠 End-to-End Ownership</h4>
+            <p>From provisioning the first VPC with Terraform to monitoring the final pod in K8s, I manage the entire lifecycle of an application.</p>
+        </div>
+        <div class="card">
+            <h4>💡 Scalability Focused</h4>
+            <p>I design architectures that grow with your user base, ensuring performance doesn't dip when traffic spikes.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects (6)</h2>
+    <div class="grid">
+        <div class="card">
+            <h3 style="color:var(--accent);">1. Multi-Cloud DevOps Platform</h3>
+            <p>Full-stack Kubernetes deployment on AWS with real-time monitoring.</p>
+            <img src="images/k8s-project.jpg" class="project-img" alt="Project Screenshot">
+            <ul>
+                <li>Integrated Prometheus/Grafana</li>
+                <li>AWS Load Balancer setup</li>
+            </ul>
+            <a href="https://github.com/ChallaNarendra03" class="btn">View Project</a>
+        </div>
+        
+        </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card" style="text-align:center;">
+        <p>Email: challanarendra303@gmail.com</p>
+        <p>Location: Bengaluru, India</p>
+        <a href="https://github.com/ChallaNarendra03" class="btn">GitHub</a>
+        <a href="https://linkedin.com/in/narendra-challa0" class="btn">LinkedIn</a>
     </div>
 </section>
 
 <footer>
-    © 2026 Narendra Challa | DevOps Engineering Portfolio
+    © 2026 Narendra Challa | DevOps Portfolio
 </footer>
 
 </body>
